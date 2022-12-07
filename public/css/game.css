@@ -1,0 +1,340 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  :root {
+      word-wrap:break-word;
+      background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(255, 145, 0, 0.5)
+      ), url("../img/bg-login.jpg");
+      /* https://stackoverflow.com/questions/16841323/making-gradient-background-fill-page-with-css */
+      /* This was mad hepful and background mdn */
+      --webkit-background-size: cover;
+      --moz-background-size: cover;
+      --o-background-size: cover;
+      --bg-light-mode-color: #ffffff;
+      --bg-dark-mode-color: #21313c;
+      --font-dark-mode-color: #ffffff;
+     
+    }
+    
+    .front-page-img {
+       height: 200px;
+    }
+    
+    
+    
+    html {
+      width: 100%;
+    }
+    
+    header {
+      width: 100%;
+      height: 20%;
+    }
+  /*   
+    .option-login {
+      padding
+    } */
+    
+    
+    /* .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    } */
+    
+    .baske {
+      color: black;
+      font-size: 2rem;
+      border: 3px solid black;
+      
+    }
+    .therapy {
+      color: white;
+      font-size: 2rem;
+      border: 3px solid black;
+    }
+    body{
+     
+      word-wrap:break-word;
+      
+      background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(255, 145, 0, 0.5)
+      ), url("../img/bg-login.jpg");
+      /* https://stackoverflow.com/questions/16841323/making-gradient-background-fill-page-with-css */
+      /* This was mad hepful and background mdn */
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      
+     
+    }
+    
+    
+    /* Vector */
+    .main-area {
+      display: flex;
+      justify-items: center;
+      width: 100%;
+    }
+    
+    
+    
+    .logo {
+      width: 64px;
+      height: 64px;
+    
+    }
+    
+    
+    .logo-sm {
+      width: 32px;
+      height: 32px;
+    
+    }
+    .sign-up-header {
+     
+      text-align: center;
+      color: white;
+    }
+    
+    .sign-in-link {
+      color:  rgb(244, 138, 29);
+    }
+
+    .card-dimension {
+      height: 100px;
+      width: 200px;
+    }
+    
+    .card {
+      /* Rectangle 9 */
+      padding-top: 40%;
+      width: 40%;
+  
+      padding: 1rem 1rem;
+      background: rgb(0, 0, 0, 0.75);
+      border-radius: 15px;
+      color: white;
+      margin: 0 auto;
+      
+    }
+    .profile-pic {
+      border-radius: 15px;
+    }
+    .chart {
+      width: 600px;
+      height: 500px;
+      margin: 0 auto;
+      border-radius: 15px;
+    }
+    .sign-up-button {
+      padding-top: -100;
+    }
+    /* form input {
+      background: gray;
+    } */
+    /* Footer
+    © 2022 GitHub, Inc.
+    Footer navigation
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+     */
+
+     h {
+      font-weight: bold;
+      color: #89989b;
+      text-align: right;
+    }
+    
+    td {
+      padding-left: 20px;
+    }
+    
+    main {
+      box-sizing: border-box;
+      padding: 1rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Navigation Bar */
+    #nav {
+      flex-shrink: 0;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      color: #89989b;
+    }
+    
+    #nav button,
+    #nav select {
+      font-size: 1.1rem;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    }
+    
+    .theme-label {
+      line-height: 35px;
+      padding-left: 10px;
+    }
+    
+    .dark-mode {
+      background-color: var(
+        --bg-dark-mode-color
+      ); /* to match the chart's background */
+      color: var(--font-dark-mode-color);
+    }
+    
+    body span.theme-label::before {
+      content: "☀️";
+    }
+    
+    body.dark-mode span.theme-label::before {
+      content: "🌙";
+    }
+    
+    /* Body */
+    .body-content {
+      display: flex;
+      padding-top: 40%;
+      
+  
+      padding: 1rem 1rem;
+      background: rgb(0, 0, 0, 0.75);
+
+      color: white;
+      margin: 0 auto;
+
+      
+    }
+    
+    /* Chart */
+    #chart {
+      border-top: none;
+      flex-grow: 1;
+      height: 100%;
+      width: 80%;
+      margin: 5%;
+      background-color: #21313c;
+    }
+    
+    /* Chart Info */
+    .chartInfo {
+      font-size: 20px;
+      width: 520px;
+      margin: 5%;
+    }
+    
+    .chart-title {
+      text-align: center;
+      color: #89989b;
+    }
+    
+    #chartDataButton {
+      margin-top: 1em;
+      padding: 0.5rem 1rem;
+      width: 100%;
+    }
+    
+    /* JSON Viewer */
+    #jsonViewer {
+      visibility: hidden;
+      transition: background-color 0.5s ease;
+      --background-color: var(--bg-light-mode-color);
+      --string-color: #00a35c;
+      --preview-color: #ffc010;
+      --property-color: #0498ec;
+      --number-color: #b45af2;
+      --boolean-color: #ef5752;
+    }
+    
+    body.dark-mode #jsonViewer {
+      --background-color: var(--bg-dark-mode-color);
+      --string-color: #00ed64;
+      --preview-color: #ffec9e;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    
+    /* Hide default HTML checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    /* The slider */
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #c5e4f2;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      box-shadow: #bdc3c7 0px 0px 10px 1px;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    
+    input:checked + .slider {
+      background-color: #1a567e;
+      box-shadow: #2c3e50 0px 0px 10px 1px;
+    }
+    
+    input:focus + .slider {
+      box-shadow: 0 0 1px #1a567e;
+      box-shadow: #2c3e50 0px 0px 10px 1px;
+    }
+    
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+    
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+    
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    
+    

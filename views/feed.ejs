@@ -1,0 +1,29 @@
+<%- include('partials/header') -%>
+  <div class="">
+    <div class="">
+      <ul class="grid grid-cols-4 gap-4">
+        <% for(var i=0; i<games.length; i++) {%>
+          <li class="">
+            <a href="/game/<%= games[i]._id%>">
+              <div class=" card-size card w-72  bg-base-100 shadow-xl">
+                <figure><img class="img-fluid w-45 h-40" src="<%= games[i].image%>" alt="cover-image" class="h-0.5"></figure>
+                <div class="card-body w-45 h-40">
+                  <h2 class="card-title">
+                    <%= games[i].title%>
+       
+                  </h2>
+         
+                  <p><%= games[i].description.slice(0,25)%>...</p>
+                  <div class="card-actions justify-end">
+                    <div class="badge badge-outline"><%= games[i].gameType%></div> 
+                    <div class="badge badge-outline"><%= games[i].location%></div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>

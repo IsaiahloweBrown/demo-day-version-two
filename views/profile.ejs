@@ -1,0 +1,146 @@
+<%- include('partials/header-profile') -%>
+  <main>
+    <div class="">
+      <div class="text-center text-white">
+          <p><strong>User Name</strong>: <%= user.userName %></p>
+          <p><strong>Email</strong>: <%= user.email %></p>
+          <a href="/logout" class="col-3 btn btn-outline bg-black text-orange-400 hover:bg-white">Logout</a>
+
+      </div>
+      <div class="text-center">
+        <div class="text-center ">
+          <h1 class="profile-header text-white text-lg">Create a Game</h1>
+        </div>
+       
+
+        <!-- <iframe style="background: #21313C;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);"  src="https://charts.mongodb.com/charts-basketherapy-gzkyj/embed/dashboards?id=ed7a3eb1-bd85-40b5-ba14-e8f3feeb9e01&theme=dark&autoRefresh=true&maxDataAge=300&showTitleAndDesc=false&scalingWidth=fixed&scalingHeight=fixed"></iframe> -->
+
+      
+      </div>
+  </div>
+
+  <div class=" flex flex-row card ">
+    <form action="/game/createGame" enctype="multipart/form-data" method="POST">
+      <!-- <div class="mb-4 mx-32 text-center">
+        <img class="logo"src="../img/b-logo.png"   alt="basketherapy-logo">
+      </div> -->
+      <div class="mb-3 mx-45">
+        <label for="title" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Title</label>
+        <input type="text" name="title" id="base-input" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5">
+      </div>
+      <div class="mb-3 mx-45">
+        <label for="description" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Description</label>
+        <input type="text" name="description" id="base-input" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5">
+      </div>
+      <div class="mb-3 mx-45">
+        <label for="imgUpload" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Image</label>
+        <input type="file" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5" id="imageUpload" name="file">
+      </div>
+      <div class="mb-3 mx-45">
+        <label for="gameType" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Game Type</label>
+        <select type="number" name="gameType" id="gameType" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5">
+          <option value="2">1v1</option>
+          <option value="4">2v2</option>
+          <option value="6">3v3</option>
+          <option value="8">4v4</option>
+          <option value="10">5v5</option>
+        </select>
+      </div>
+      <div class="mb-3 mx-32">
+        <label for="base-input" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Date & Time</label>
+        <input type="datetime-local" name="dateAndTime" id="dateAndTime" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5">
+      </div>
+      <div class="mb-3 mx-32">
+        <label for="location" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Location</label>
+            <select type="number" name="location" id="location" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5">
+              <option value="Philadelphia,PA,US">Philadelphia, PA, US</option>
+              <option value="Pittsburg,PA,US">Pittsburg, PA, US</option>
+              <option value="Atlanta,GA,US">Atlanta, GA, US</option>
+            </select>
+      </div>
+      <div class="mb-3 mx-32 text-center">
+        <button class="btn  border border-white  text-white hover:text-orange-400 hover:border-orange-400" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  </main>
+
+  <section class="results-area">
+    <h1 class="text-white text-lg text-center">Player results:</h1>
+    <div id="nav">
+      <label
+        ><span>REFRESH CHART </span>
+        <button id="refresh">⟳</button>
+      </label>
+   
+      <label class="text-white"
+        ><span>Filter By Games </span>
+        <select id="game-filter">
+          <option value="">select a game</option>
+          <% for(let i = 0; i < allGames.length; i++) {%>
+              <option value="<%= allGames[i].id %>"><%= allGames[i].title %></option>
+          <% }%>
+        </select>
+      </label>
+      <!-- <label class="theme-label text-white"
+        ><span>THEME </span>
+        <label class="switch">
+          <input id="themeSwitch" type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <span id="themeEmoji" class="theme-label"></span>
+      </label> -->
+    </div>
+
+    <div class="body-content">
+      <div id="chart"></div>
+      <div class="chartInfo">
+        
+        <button id="chartDataButton">
+          <span id="chartDataButtonText">Show</span> Chart Data
+        </button>
+        
+        <json-viewer id="jsonViewer">{}</json-viewer>
+      </div>
+    </div>
+
+    <ul class="row list-unstyled">
+    <% for(let i=0; i<games.length; i++) {%>
+      <li class="list-none">
+        <a href="/game/<%= games[i]._id%>">
+        
+          
+      
+       
+            <!-- <button id=" btn refreshButton">Refresh</button> -->
+            <div id="chart" class="chart">
+        
+            </div>
+            <ul class="results">
+
+
+          <li class="text-center text-white">
+            <!-- <% if(result[i].userName === user.userName) {%>
+              <span>Player: <%= result[i].userName %></span>
+              <span><%= result[i].points %> pts</span>
+              <span><%= result[i].assists %> assists</span>
+              <span><%= result[i].rebounds %> rebounds</span>
+            <% } %> -->
+          </li>
+
+
+      </ul>
+    </div>
+        </a>
+      </li>
+    <% } %>
+    </ul>
+    <div class="text-center">
+      <a class="btn btn-outline bg-black text-orange-400 hover:bg-white" href="/feed">Return to Feed</a>
+      
+    </div>  
+  </section>  
+</div>    
+      
+
+<%- include('partials/footer') -%>
