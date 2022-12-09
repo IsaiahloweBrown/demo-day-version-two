@@ -128,7 +128,7 @@ module.exports = {
         rebounds: req.body.rebounds,
       });
       console.log("Result has been added!");
-      res.redirect(`/profile`);
+      res.redirect(`/Game/${req.params.id}`);
     } catch (err) {
       console.log(err);
     }
