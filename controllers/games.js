@@ -73,7 +73,7 @@ module.exports = {
         cloudinaryId: img.public_id,
         gameType: req.body.gameType,
         users: req.user.userName,
-        location: req.body.location,
+        address: req.body.address,
         dateAndTime: req.body.dateAndTime,
         user: req.user.id,
         

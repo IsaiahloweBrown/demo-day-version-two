@@ -24,20 +24,6 @@ async function renderChart() {
     
     let element = document.querySelector(".body-content")
 
-    // document
-    // .getElementById("themeSwitch")
-    // .addEventListener("change", async function () {
-    //   if (this.checked) {
-    //     await chart.setTheme('dark');
-    //     element.classList.toggle("dark-mode", true);
-    //   } else {
-    //     await chart.setTheme('light');
-    //     element.section.classList.toggle("dark-mode", false);
-    //   }
-
-    //   // var currentTheme = await chart.getTheme();
-    //   // document.getElementById("currentTheme").innerText = currentTheme;
-    // });
 
   //filtering 
   const gameSelect = document.getElementById("game-filter")

@@ -1,7 +1,7 @@
 <%- include('partials/header-game') -%>
 <div class="">
   <div class="">
-    <div class="card flex flex-rox bg-base-100">
+    <div class="card flex flex-rox bg-base-100 gap-8">
       <div class="">
         <figure><img class="img-fluid" src="<%= game.image%>" alt="cover-image" class="h-0.5"></figure>
         <div class="card-body">
@@ -11,11 +11,10 @@
           </h2>
           <p><%= game.description%></p>
           <div class="card-actions justify-end">
-            <div class="badge badge-outline"><%= game.gameType%></div> 
-            <div class="badge badge-outline"><%= game.location%></div>
+            <div class="badge badge-outline">Max Player Count: <%= game.gameType%></div> 
           </div>
         </div>
-
+   
         
       </div>
       <div class=">
@@ -57,6 +56,16 @@
         </section>
       </div>
     </div>
+    <div class="flex justify-center">
+      <span class="text-white text-lg">Address: <%= game.address %></span>
+    </div>
+   
+    <div class="flex justify-center">
+
+      <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen 
+      src="https://www.google.com/maps/embed/v1/search?q=<%= game.address %>&key=AIzaSyAnVpl-vOOfNs7hEqvhMFbnqoU9WPgZqP8"></iframe>
+    </div>
+
     <!-- <div class="col-3 mt-5">
       <p><%= game.description %></p>
     </div> -->
@@ -67,15 +76,15 @@
       <!-- <section class="mb-4 mx-32 text-center">
         <img class="logo"src="../img/b-logo.png"   alt="basketherapy-logo">
       </section> -->
-      <section class="mb-3 mx-32">
+      <section class="mb-3 mx-72">
         <label for="points" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Points:</label>
         <input type="number" placeholder="number of points" name="points" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
       </section>
-      <section class="mb-3 mx-32">
+      <section class="mb-3 mx-72">
         <label for="assists" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Assists:</label>
         <input type="number" placeholder="number of assists" name="assists" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
       </section>
-      <section class="mb-3 mx-32">
+      <section class="mb-3 mx-72">
         <label for="rebounds" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Rebounds:</label>
         <input type="number" placeholder="number of rebounds" name="rebounds" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
       </section>
