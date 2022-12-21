@@ -54,7 +54,7 @@ module.exports = {
     try {
       const game = await Game.findById(req.params.id);
       const result = await Result.find({game: req.params.id});
-      res.render("./Game.ejs", { game: game, user: req.user, result: result });
+      res.render("game.ejs", { game: game, user: req.user, result: result });
       
     } catch (err) {
       console.log(err);
