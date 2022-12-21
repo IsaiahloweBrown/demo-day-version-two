@@ -46,7 +46,7 @@ app.use(logger("dev"));
 app.use(methodOverride("_method"));
 
 
-app.use(express.static('static'))
+// app.use(express.static('static'))
 
 // Setup Sessions - stored in MongoDB
 app.use(
