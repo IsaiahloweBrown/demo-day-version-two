@@ -33,7 +33,7 @@ connectDB();
 app.set("view engine", "ejs");
 
 //Static Folder
-var path = require ('path');
+
 app.use(express.static(path.join(__dirname + '../public')));
 
 //Body Parsing
